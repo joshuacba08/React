@@ -10,9 +10,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/dumb/NavBar";
 import ReactDefaultGreeting from "./components/dumb/ReactDefaultGreeting";
 import AppFooter from "./components/dumb/AppFooter";
+import ItemListContainer from "./components/dumb/ItemListContainer";
 
-window.claseID = "Clase 3";
-window.claseNombre = "JSX y Transpiling";
+window.claseID = "Clase 4";
+window.claseNombre = "Componentes I";
 window.brandName = "TiendaReactX";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     <>
       <div className="App content-container">
         <NavBar brandname={window.brandName} />
-        <ReactDefaultGreeting />
+        <ItemListContainer greeting = "Hola Mundo" />
         <AppFooter />
       </div>
     </>
