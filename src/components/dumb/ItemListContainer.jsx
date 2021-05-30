@@ -1,24 +1,32 @@
 //R34c7
 import React from "react";
+
+//Custom Components
+import ItemList from "../functional/ItemList";
 import logo from "../../assets/img/logo.svg";
+import "./ItemListContainer.css";
 
 const ItemListContainer = ({ greeting }) => {
   return (
     <>
       <main className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <code>{ greeting }</code>
+          <code>{greeting}</code>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <br /><br /><br /><br />
-          Learn React
-        </a>
+        <ItemList />
+        <br />
+        <br />
+        <br />
+        <br />
+        <img src={logo} className="App-logo" alt="logo" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </main>
     </>
   );
