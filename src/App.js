@@ -11,8 +11,8 @@ import NavBar from "./components/dumb/NavBar";
 import AppFooter from "./components/dumb/AppFooter";
 import ItemListContainer from "./components/dumb/ItemListContainer";
 
-window.claseID = "Clase 5";
-window.claseNombre = "Componentes II";
+window.claseID = "Clase 6";
+window.claseNombre = "Promises, Asincronía y Maps";
 window.brandName = "TiendaReactX";
 
 function App() {
