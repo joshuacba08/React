@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+//R34c7
+import React from "react";
+import "./App.css";
+import "./assets/css/fonts.css";
+
+//BootStrap
+import "bootstrap/dist/css/bootstrap.min.css";
+
+//Components
+import NavBar from "./components/dumb/NavBar";
+import ReactDefaultGreeting from "./components/dumb/ReactDefaultGreeting";
+import AppFooter from "./components/dumb/AppFooter";
+
+window.claseID = "Clase 3";
+window.claseNombre = "JSX y Transpiling";
+window.brandName = "TiendaReactX";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App content-container">
+        <NavBar brandname={window.brandName} />
+        <ReactDefaultGreeting />
+        <AppFooter />
+      </div>
+    </>
   );
 }
 
