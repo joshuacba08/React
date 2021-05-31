@@ -9,20 +9,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Components
 import NavBar from "./components/dumb/NavBar";
 import AppFooter from "./components/dumb/AppFooter";
-import ItemListContainer from "./components/dumb/ItemListContainer";
+import MainContainer from "./components/container/MainContainer";
+import ItemContext from "./components/functional/ItemContext";
 
-window.claseID = "Clase 6";
-window.claseNombre = "Promises, Asincronía y Maps";
+window.claseID = "Clase 7";
+window.claseNombre = "Consumiendo APIs";
 window.brandName = "TiendaReactX";
+window.productID = 0;
 
 function App() {
+  const productID = 0;
   return (
     <>
-      <div className="App content-container">
-        <NavBar brandname={window.brandName} />
-        <ItemListContainer greeting = "Mi Catálogo" />
-        <AppFooter />
-      </div>
+      <ItemContext.Provider value={productID}>
+        <div className="App content-container">
+          <NavBar brandname={window.brandName} />
+          <MainContainer />
+          <AppFooter />
+        </div>
+      </ItemContext.Provider>
     </>
   );
 }

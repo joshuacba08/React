@@ -9,16 +9,17 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 //Custom Components
-import Item from "../presentational/Item";
-import productList from "../container/productos.js";
+import ItemZoomed from "../presentational/ItemZoomed";
+import productDetailList from "../container/productosDetail.js";
 
 import "./ItemList.css";
-const ItemList = ( props ) => {
-  const [products, setProducts] = useState([]);
+const ItemDetail = (props) => {
+  const productId = Number(props.id);
+  const [items, setItems] = useState([]);
 
-  const getProducts = new Promise((resolve, reject) => {
+  const getItems = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(productList);
+      resolve(productDetailList);
     }, 2000);
   });
 
@@ -37,8 +38,8 @@ const ItemList = ( props ) => {
 
   const loadProducts = async () => {
     try {
-      const result = await getProducts;
-      setProducts(result);
+      const result = await getItems;
+      setItems(result);
     } catch (error) {
       myAlert(
         "Atención, no se pudo obtener la lista de productos. Por favor reintente en unos instantes."
@@ -52,21 +53,25 @@ const ItemList = ( props ) => {
 
   return (
     <div className="product-list-container">
-      {products.length ? (
+      {items.length ? (
         <>
-          {products.map((product) => {
-            return (
-              <div key={product.itemID}>
-                <Item props
-                  itemID = {product.itemID}
-                  image={product.image}
-                  name={product.name}
-                  price={product.price}
-                  stock={product.stock}
-                />
-              </div>
-            );
-          })}
+          {items
+            .filter((item) => item.itemID === productId)
+            .map((item) => {
+              return (
+                <div key={item.itemID}>
+                  <ItemZoomed
+                    image={item.image}
+                    name={item.name}
+                    descr={item.descr}
+                    color={item.color}
+                    brand={item.brand}
+                    price={item.price}
+                    stock={item.stock}
+                  />
+                </div>
+              );
+            })}
         </>
       ) : (
         <p>{<CircularProgress />}</p>
@@ -75,4 +80,4 @@ const ItemList = ( props ) => {
   );
 };
 
-export default ItemList;
+export default ItemDetail;

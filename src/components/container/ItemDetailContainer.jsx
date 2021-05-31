@@ -2,23 +2,21 @@
 import React from "react";
 
 //Custom Components
-import ItemList from "../functional/ItemList";
-import logo from "../../assets/img/logo.svg";
+import ItemDetail from "../functional/ItemDetail";
 import "./ItemListContainer.css";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemDetailContainer = ({ greeting, itemId }) => {
   return (
     <>
       <main className="App-header">
         <p>
           <code>{greeting}</code>
         </p>
-        <ItemList />
+        <ItemDetail id={itemId} />
         <br />
         <br />
         <br />
         <br />
-        <img src={logo} className="App-logo" alt="logo" />
         <br />
         <br />
         <br />
@@ -32,4 +30,4 @@ const ItemListContainer = ({ greeting }) => {
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;
